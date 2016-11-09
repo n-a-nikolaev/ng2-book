@@ -24,7 +24,7 @@ export class FormComponent implements OnInit {
      * @param  {HTMLInputElement} link
      */
     public addArticle(title: HTMLInputElement, link: HTMLInputElement) {
-        if (this.isEmptyString(title) || this.isEmptyString(link)) {
+        if (this.isEmptyString(title.value) || this.isEmptyString(link.value)) {
             this.hasError = true;
             return false; 
         }
