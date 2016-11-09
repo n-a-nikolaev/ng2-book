@@ -1,0 +1,17 @@
+<div class="ui info message" *ngIf="!list">
+    <div class="header">
+        No articles found yet.
+    </div>
+    <ul class="list">
+        <li>You can add one on the form above.</li>
+        <li>It's simple. Just add title and link.</li>
+    </ul>
+</div>
+
+<div *ngIf="list">
+    <ul>
+        <li *ngFor="let article of list">
+            {{article.title}} - {{article.link}}
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,13 @@
+<form class="ui form segment">
+    <div class="field">
+        <label>Name</label>
+        <input placeholder="Title" name="title" type="text" #title>
+    </div>
+    <div class="field">
+        <label>Url</label>
+        <input placeholder="Url" name="url" type="url" #link>
+    </div>
+    <div class="field">
+        <button type="button" (click)="addArticle(title, link)" class="ui positive button">Add Link</button>
+    </div>
+</form>
