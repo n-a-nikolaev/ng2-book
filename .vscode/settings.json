@@ -1,5 +1,5 @@
 {
-    "typescript.tsdk": "./node_modules/typescript/lib",
+    "typescript.tsdk": "./angular2-reddit/node_modules/typescript/lib",
     "files.exclude": {
         "**/*.js": {
             "when": "$(basename).ts"
