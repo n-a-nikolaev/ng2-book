@@ -1,4 +1,4 @@
-<div class="ui info message" *ngIf="!list">
+<div class="ui info message" *ngIf="list.length == 0">
     <div class="header">
         No articles found yet.
     </div>
@@ -8,10 +8,17 @@
     </ul>
 </div>
 
-<div *ngIf="list">
-    <ul>
+<div *ngIf="list.length > 0">
+    <!--<ul>
         <li *ngFor="let article of list">
             {{article.title}} - {{article.link}}
         </li>
-    </ul>
+    </ul>-->
+    <div class="ui segment">
+        <div class="ui relaxed divided list">
+            <div class="ui grid">
+                <reddit-article *ngFor="let article of list" [article]="article"></reddit-article>
+            </div>
+        </div>
+    </div>
 </div>

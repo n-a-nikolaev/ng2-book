@@ -11,3 +11,6 @@
         <button type="button" (click)="addArticle(title, link)" class="ui positive button">Add Link</button>
     </div>
 </form>
+<div class="ui error message" *ngIf="hasError">
+    <p>Error. Both fields should be filled.</p>
+</div>

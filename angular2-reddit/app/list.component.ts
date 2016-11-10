@@ -1,9 +1,7 @@
-interface Article {
-    title: string;
-    link: string;
-}
+import { Component, OnInit, Input } from '@angular/core';
 
-import { Component, OnInit } from '@angular/core';
+import { Article } from './article.interface';
+import { ArticleService } from './article.service';
 
 @Component({
     moduleId: module.id,
@@ -12,12 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-    private list: Article[];
+    @Input('init') list: Article[] = [];
 
     constructor() { }
 
     ngOnInit() {
 
     }
-
 }

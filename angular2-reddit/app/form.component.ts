@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+
+import { Article } from './article.interface';
 
 @Component({
     moduleId: module.id,
@@ -8,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class FormComponent implements OnInit {
 
     private hasError: boolean;
+
+    @Output('articleAdd') addition: EventEmitter<Article> = new EventEmitter<Article>();
 
     constructor() {
     }
@@ -26,8 +30,15 @@ export class FormComponent implements OnInit {
     public addArticle(title: HTMLInputElement, link: HTMLInputElement) {
         if (this.isEmptyString(title.value) || this.isEmptyString(link.value)) {
             this.hasError = true;
-            return false; 
+            return; 
         }
+        if (this.hasError) {
+            this.hasError = !this.hasError;
+        }
+        this.addition.emit({ id: new Date().getTime(), title: title.value, link: link.value, votes: 0 });
+
+        title.value = '';
+        link.value = '';
     }
 
     
@@ -40,6 +51,6 @@ export class FormComponent implements OnInit {
      * @returns boolean
      */
     private isEmptyString(str: string):boolean {
-        return str !== '';
+        return str === '';
     }
 }
