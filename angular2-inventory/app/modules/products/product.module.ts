@@ -1,11 +1,11 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ProductListComponent } from './list/product-list.component';
+import { ProductsComponent } from './products.component';
 import { ProductDetailsComponent } from './details/product-details.component';
 
 export const routes: Routes = [
-    { path: 'products', component: ProductListComponent },
+    { path: 'products', component: ProductsComponent },
     { path: 'products/:id', component: ProductDetailsComponent }
 ]
 export const ProductsRoutingModule: ModuleWithProviders = RouterModule.forChild(routes);
@@ -14,6 +14,6 @@ export const ProductsRoutingModule: ModuleWithProviders = RouterModule.forChild(
     imports: [
         ProductsRoutingModule
     ],
-    declarations: [ProductListComponent, ProductDetailsComponent]
+    declarations: [ProductsComponent, ProductDetailsComponent]
 })
 export class ProductsModule { }

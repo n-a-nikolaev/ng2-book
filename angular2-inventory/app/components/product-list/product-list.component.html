@@ -1,0 +1,20 @@
+<div class="item" *ngFor="let product of products">
+    <div class="ui small image">
+        <img [src]="product.thumb" [alt]="product.title">
+    </div>
+    <div class="content">
+        <div class="header">{{product.title}}</div>
+        <div class="meta">{{product.price | currency:'USD':true:'1.2-2'}}</div>
+        <div class="description">{{product.description}}</div>
+        <div class="extra">
+            <button class="ui labeled icon blue button">
+                        <i class="edit icon"></i>
+                        Edit
+                    </button>
+            <button class="ui right red labeled icon button">
+                        <i class="remove icon"></i>
+                        Remove
+                    </button>
+        </div>
+    </div>
+</div>

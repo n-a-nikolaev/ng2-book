@@ -1,0 +1,23 @@
+<div class="ui menu">
+    <div class="item">
+        <div class="ui icon input">
+            <input type="text" placeholder="Search...">
+            <i class="search icon"></i>
+        </div>
+    </div>
+    <div class="right item">
+        <button class="ui green button">Add New</button>
+    </div>
+</div>
+
+<div class="ui items" *ngIf="products.length > 0">
+    <product-list [products]="products"></product-list>
+</div>
+<div class="ui info message" *ngIf="products.length == 0">
+    <div class="header">
+        No products found
+    </div>
+    <ul class="list">
+        <li>If you want to add a new product, just click "Add new" button.</li>
+    </ul>
+</div>
